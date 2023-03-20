@@ -1,0 +1,15 @@
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\bin\Debug\net6.0\CandidateTesting.GustavoFagundesComin.Application.exe
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\bin\Debug\net6.0\CandidateTesting.GustavoFagundesComin.Application.deps.json
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\bin\Debug\net6.0\CandidateTesting.GustavoFagundesComin.Application.runtimeconfig.json
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\bin\Debug\net6.0\CandidateTesting.GustavoFagundesComin.Application.dll
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\bin\Debug\net6.0\CandidateTesting.GustavoFagundesComin.Application.pdb
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\obj\Debug\net6.0\CandidateTesting.GustavoFagundesComin.Application.csproj.AssemblyReference.cache
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\obj\Debug\net6.0\CandidateTesting.GustavoFagundesComin.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\obj\Debug\net6.0\CandidateTesting.GustavoFagundesComin.Application.AssemblyInfoInputs.cache
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\obj\Debug\net6.0\CandidateTesting.GustavoFagundesComin.Application.AssemblyInfo.cs
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\obj\Debug\net6.0\CandidateTesting.GustavoFagundesComin.Application.csproj.CoreCompileInputs.cache
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\obj\Debug\net6.0\CandidateTesting.GustavoFagundesComin.Application.dll
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\obj\Debug\net6.0\refint\CandidateTesting.GustavoFagundesComin.Application.dll
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\obj\Debug\net6.0\CandidateTesting.GustavoFagundesComin.Application.pdb
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\obj\Debug\net6.0\CandidateTesting.GustavoFagundesComin.Application.genruntimeconfig.cache
+E:\PROGRAMACAO\C#\CandidateTesting.GustavoFagundesComin\CandidateTesting.GustavoFagundesComin\obj\Debug\net6.0\ref\CandidateTesting.GustavoFagundesComin.Application.dll

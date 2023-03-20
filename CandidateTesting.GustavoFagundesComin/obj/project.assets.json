@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\PROGRAMACAO\\Cursos\\TCC\\Unifica\\CandidateTesting.GustavoFagundesComin\\CandidateTesting.GustavoFagundesComin\\CandidateTesting.GustavoFagundesComin.csproj",
-      "projectName": "CandidateTesting.GustavoFagundesComin",
-      "projectPath": "E:\\PROGRAMACAO\\Cursos\\TCC\\Unifica\\CandidateTesting.GustavoFagundesComin\\CandidateTesting.GustavoFagundesComin\\CandidateTesting.GustavoFagundesComin.csproj",
+      "projectUniqueName": "E:\\PROGRAMACAO\\C#\\CandidateTesting.GustavoFagundesComin\\CandidateTesting.GustavoFagundesComin\\CandidateTesting.GustavoFagundesComin.Application.csproj",
+      "projectName": "CandidateTesting.GustavoFagundesComin.Application",
+      "projectPath": "E:\\PROGRAMACAO\\C#\\CandidateTesting.GustavoFagundesComin\\CandidateTesting.GustavoFagundesComin\\CandidateTesting.GustavoFagundesComin.Application.csproj",
       "packagesPath": "C:\\Users\\Gustavo\\.nuget\\packages\\",
-      "outputPath": "E:\\PROGRAMACAO\\Cursos\\TCC\\Unifica\\CandidateTesting.GustavoFagundesComin\\CandidateTesting.GustavoFagundesComin\\obj\\",
+      "outputPath": "E:\\PROGRAMACAO\\C#\\CandidateTesting.GustavoFagundesComin\\CandidateTesting.GustavoFagundesComin\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
