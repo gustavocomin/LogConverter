@@ -1,5 +1,5 @@
-﻿using CandidateTesting.GustavoFagundesComin.Domain;
-using CandidateTesting.GustavoFagundesComin.Service.Converter;
+﻿using CandidateTesting.GustavoFagundesComin.Application.Service.Converter;
+using CandidateTesting.GustavoFagundesComin.Domain;
 using CandidateTesting.GustavoFagundesComin.Service.Reader;
 using CandidateTesting.GustavoFagundesComin.Service.Writer;
 using System;
@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace CandidateTesting.GustavoFagundesComin.Application
@@ -40,7 +41,7 @@ namespace CandidateTesting.GustavoFagundesComin.Application
             Console.WriteLine("Press any key to exit...");
         }
 
-        private static async Task<HttpResponseMessage> GetFileContentAsync(string url)
+        public static async Task<HttpResponseMessage> GetFileContentAsync(string url)
         {
             using HttpClient client = new();
             HttpResponseMessage response = await client.GetAsync(url);
@@ -59,6 +60,9 @@ namespace CandidateTesting.GustavoFagundesComin.Application
             {
                 try
                 {
+                    JsonSerializer.Serialize(log);
+                    using StreamWriter writer = new(@"C:\Users\Gustavo\Desktop\Nova pasta\json.json");
+
                     convertedLogs.Add(new LogConverter().Convert(log));
                 }
                 catch (Exception e)

@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace CandidateTesting.GustavoFagundesComin.Service.Reader
@@ -46,6 +48,8 @@ namespace CandidateTesting.GustavoFagundesComin.Service.Reader
                 }
             }
 
+            var a = JsonSerializer.Serialize(logs);
+            File.WriteAllText(@"C:\Users\Gustavo\Desktop\Nova pasta\teste.json", a);
             return logs;
         }
     }
