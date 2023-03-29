@@ -1,6 +1,6 @@
 ﻿using CandidateTesting.GustavoFagundesComin.Domain;
 
-namespace CandidateTesting.GustavoFagundesComin.Service.Converter
+namespace CandidateTesting.GustavoFagundesComin.Application.Service.Converter
 {
     public interface ILogConverter
     {

@@ -18,41 +18,43 @@ namespace CandidateTesting.GustavoFagundesComin.Service.Reader
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
-                    logs = BuildClass(line);
+                {
+                    try
+                    {
+                        string[] parts = line.Split('|');
+                        logs.Add(BuildClass(parts));
+                    }
+                    catch (Exception e)
+                    {
+                        throw new Exception($"Erro on read log. Error: {e.Message}. Line with error: {line}\n");
+                    }
+                }
             }
 
             return logs;
         }
 
-        private static List<LogEntry> BuildClass(string line)
+        private static LogEntry BuildClass(string[] parts)
         {
-            List<LogEntry> logs = new();
-            try
+            LogEntry logs = new();
+            logs = new LogEntry
             {
-                string[] parts = line.Split('|');
-                logs.Add(new LogEntry
+                Provider = "MINHA CDN",
+                HttpMethod = parts[3].Split(' ')[0],
+                StatusCode = int.Parse(parts[1]),
+                UriPath = parts[3].Split(' ')[1],
+                TimeTaken = double.Parse(parts[4]),
+                ResponseSize = 0,
+                CacheStatus = parts[2] switch
                 {
-                    Provider = "MINHA CDN",
-                    HttpMethod = parts[3].Split(' ')[0],
-                    StatusCode = int.Parse(parts[1]),
-                    UriPath = parts[3].Split(' ')[1],
-                    TimeTaken = double.Parse(parts[4]),
-                    ResponseSize = 0,
-                    CacheStatus = parts[2] switch
-                    {
-                        "HIT" => "HIT",
-                        "MISS" => "MISS",
-                        "INVALIDATE" => "REFRESH_HIT",
-                        _ => throw new InvalidOperationException($"Invalid cache status: {parts[2]}")
-                    }
-                });
+                    "HIT" => "HIT",
+                    "MISS" => "MISS",
+                    "INVALIDATE" => "REFRESH_HIT",
+                    _ => throw new InvalidOperationException($"Invalid cache status: {parts[2]}")
+                }
+            };
 
-                return logs;
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Erro on read log. Error: {e.Message}. Line with error: {line}\n");
-            }
+            return logs;
         }
     }
 }

@@ -1,5 +1,0 @@
-E:\PROGRAMACAO\C#\Nova pasta\CandidateTesting.GustavoFagundesComin.Application.exe
-E:\PROGRAMACAO\C#\Nova pasta\CandidateTesting.GustavoFagundesComin.Application.dll
-E:\PROGRAMACAO\C#\Nova pasta\CandidateTesting.GustavoFagundesComin.Application.deps.json
-E:\PROGRAMACAO\C#\Nova pasta\CandidateTesting.GustavoFagundesComin.Application.runtimeconfig.json
-E:\PROGRAMACAO\C#\Nova pasta\CandidateTesting.GustavoFagundesComin.Application.pdb

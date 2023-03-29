@@ -1,5 +1,4 @@
 ﻿using CandidateTesting.GustavoFagundesComin.Domain;
-using CandidateTesting.GustavoFagundesComin.Service.Converter;
 
 namespace CandidateTesting.GustavoFagundesComin.Application.Service.Converter
 {

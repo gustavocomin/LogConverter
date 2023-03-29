@@ -1,6 +1,5 @@
 ﻿using CandidateTesting.GustavoFagundesComin.Application.Service.Converter;
 using CandidateTesting.GustavoFagundesComin.Domain;
-using CandidateTesting.GustavoFagundesComin.Service.Converter;
 using CandidateTesting.GustavoFagundesComin.Service.Reader;
 using CandidateTesting.GustavoFagundesComin.Service.Writer;
 using Microsoft.Extensions.DependencyInjection;
@@ -45,9 +44,9 @@ namespace CandidateTesting.GustavoFagundesComin.Application
             if (args.Length != 2)
             {
                 Console.Write("Enter the URL to download: ");
-                url = Console.ReadLine();
+                url = "https://s3.amazonaws.com/uux-itaas-static/minha-cdn-logs/input-01.txt";//Console.ReadLine();
                 Console.Write("\nEnter the file path to save the downloaded file: ");
-                filePath = Console.ReadLine();
+                filePath = @"C:\Users\Gustavo\Desktop\Nova pasta";
             }
             else
             {
