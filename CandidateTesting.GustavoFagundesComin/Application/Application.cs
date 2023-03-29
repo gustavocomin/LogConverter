@@ -1,33 +1,64 @@
 ﻿using CandidateTesting.GustavoFagundesComin.Application.Service.Converter;
 using CandidateTesting.GustavoFagundesComin.Domain;
+using CandidateTesting.GustavoFagundesComin.Service.Converter;
 using CandidateTesting.GustavoFagundesComin.Service.Reader;
 using CandidateTesting.GustavoFagundesComin.Service.Writer;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace CandidateTesting.GustavoFagundesComin.Application
 {
     public class Application
     {
+        private readonly ILogReader _logReader;
+        private readonly ILogWriter _logWriter;
+        private readonly ILogConverter _logConverter;
+
+        public Application(ILogReader logReader, ILogWriter logWriter, ILogConverter logConverter)
+        {
+            _logReader = logReader;
+            _logWriter = logWriter;
+            _logConverter = logConverter;
+        }
+
         static async Task Main(string[] args)
         {
-            //https://s3.amazonaws.com/uux-itaas-static/minha-cdn-logs/input-01.txt
-            //C:\Users\Gustavo\Desktop\Nova pasta\input-01.txt
+            var serviceProvider = new ServiceCollection()
+                .AddLogging()
+                .AddScoped<Application>()
+                .AddScoped<ILogReader, LogReader>()
+                .AddScoped<ILogWriter, LogWriter>()
+                .AddScoped<ILogConverter, LogConverter>()
+                .BuildServiceProvider();
 
+            await serviceProvider.GetService<Application>().RunAsync(args);
+        }
 
-            Console.Write("Enter the URL to download: ");
-            string url = Console.ReadLine();
-            Console.Write("\nEnter the file path to save the downloaded file: ");
-            string filePath = Console.ReadLine();
+        public async Task RunAsync(string[] args)
+        {
+            string url;
+            string filePath;
+            if (args.Length != 2)
+            {
+                Console.Write("Enter the URL to download: ");
+                url = Console.ReadLine();
+                Console.Write("\nEnter the file path to save the downloaded file: ");
+                filePath = Console.ReadLine();
+            }
+            else
+            {
+                url = args[0];
+                filePath = args[1];
+            }
+
             string fileName = Path.GetFileName(url);
 
             HttpResponseMessage response = await GetFileContentAsync(url);
-            List<LogEntry> logList = await new LogReader().ReadAsync(response);
+            List<LogEntry> logList = await _logReader.ReadAsync(response);
             List<string> convertedLogs = PopulateLogList(logList);
 
             if (!Path.GetFileName(filePath).EndsWith(".txt"))
@@ -36,7 +67,7 @@ namespace CandidateTesting.GustavoFagundesComin.Application
             if (File.Exists(filePath))
                 filePath = AdaptFileName(fileName, filePath);
 
-            new LogWriter().Write(convertedLogs, filePath);
+            _logWriter.Write(convertedLogs, filePath);
 
             Console.WriteLine("Press any key to exit...");
         }
@@ -46,35 +77,18 @@ namespace CandidateTesting.GustavoFagundesComin.Application
             using HttpClient client = new();
             HttpResponseMessage response = await client.GetAsync(url);
 
-            if (response.IsSuccessStatusCode)
+            if (response != null && response.IsSuccessStatusCode)
                 return response;
             else
-                throw new Exception($"Failed to get file content from {url}: {response.StatusCode}");
+                throw new Exception($"Failed to get file content from {url}: {response?.StatusCode}");
         }
 
-        private static List<string> PopulateLogList(List<LogEntry> logList)
+        private List<string> PopulateLogList(List<LogEntry> logList)
         {
-            string errorList = "";
-            List<string> convertedLogs = new();
-            logList.ForEach(log =>
-            {
-                try
-                {
-                    JsonSerializer.Serialize(log);
-                    using StreamWriter writer = new(@"C:\Users\Gustavo\Desktop\Nova pasta\json.json");
-
-                    convertedLogs.Add(new LogConverter().Convert(log));
-                }
-                catch (Exception e)
-                {
-                    errorList += $"Error on converting log. Error: {e.Message}.\n Unconverted log: {log}\n\n";
-                }
-            });
-
-            if (errorList.Any())
-                throw new Exception(errorList);
-
-            return convertedLogs;
+            List<string> logs = new();
+            foreach (var log in logList)
+                logs.Add(_logConverter.Convert(log));
+            return logs;
         }
 
         private static string AdaptFileName(string fileName, string filePath)

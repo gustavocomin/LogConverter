@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "IYLSO0ad5qUGKPc2kCTXokI+15IVNXKCiyjKx2v5w6RFnFEnVF6CHMs04vSFdafWeozBep+kyt5s18B4r7MuAA==",
+  "dgSpecHash": "ASHa/QxDlheWBB5aP8/igGFYq80hx5JMrsA1H0tQ7fmOppZt6zQIXEm6qm7xwRiy6cUNEunz7am5zkPbc5YBLw==",
   "success": true,
   "projectFilePath": "E:\\PROGRAMACAO\\C#\\CandidateTesting.GustavoFagundesComin\\CandidateTesting.GustavoFagundesComin\\CandidateTesting.GustavoFagundesComin.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Gustavo\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\Gustavo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Gustavo\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
+    "C:\\Users\\Gustavo\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Gustavo\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
+    "C:\\Users\\Gustavo\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\Gustavo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
